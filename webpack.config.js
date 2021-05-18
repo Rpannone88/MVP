@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './client/index.js',
+  entry: ["@babel/polyfill", './client/index.js'],
   mode: "development",
   output: {
     filename: 'bundle.js',
@@ -19,6 +19,14 @@ module.exports = {
             presets: ['@babel/preset-react', '@babel/preset-env']
           }
         }
+      },
+      {
+        test: /\.less$/,
+        use: [
+            { loader: 'style-loader' },
+            { loader: 'css-loader' },
+            { loader: 'less-loader' }
+        ]
       }
     ]
   }
