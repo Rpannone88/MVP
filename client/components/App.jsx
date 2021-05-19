@@ -12,7 +12,14 @@ import '/Users/ryanpannone/HR/webpack-babel-practice/client/styles.less';
 
     return (
       <div>
-        <h1>Today is {fullDays[day.getDay()]} {fullMonths[month.getMonth()]} {numberDay.getDate()} and it's time to learn some git!</h1>
+
+        <div>
+        <span className="title">Today is {fullDays[day.getDay()]} {fullMonths[month.getMonth()]} {numberDay.getDate()}</span>
+        </div>
+        <div>
+          <span className="title">Time to learn some git.</span>
+        </div>
+
         <GitCommands />
       </div>
     )

@@ -19,8 +19,8 @@ export default function GitCommands(){
     console.log(commands)
     return (
     <>
-      <span>
-        Your Official Git Command of The Day: {item}
+      <span className="command">
+        {item}
       </span>
     </> )
   }) : null;
@@ -39,21 +39,31 @@ export default function GitCommands(){
 
     return (
     <>
-      <span>
-        Whats it for??: {item}
+      <span  className="usage">
+        {item}
       </span>
+      <div>
+
+        <a href="https://git-scm.com/docs/git-diff" className="need">Need More Info?</a>
+      </div>
     </> )
   }) : null;
+
+
 
   return (
 
     <>
-    <button onClick={() => fetchDailyCommand()}>Click For Commands</button>
+    <div className="container">
+    <button className="btn" onClick={() => fetchDailyCommand()}>command</button>
+
+    <button className="btn" onClick={() => fetchDailyUsage()}>usage</button>
+    </div>
 
     <div>
       {dailyCommand}
     </div>
-    <button onClick={() => fetchDailyUsage()}>What does it do?</button>
+
     <div>
       {dailyUsage}
     </div>
